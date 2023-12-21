@@ -1,21 +1,23 @@
 from LinkedList import LinkedList
+from Algorithms import Bubblesort, BinarySearch
 
 if __name__ == '__main__':
-    li = LinkedList()
-
-    li.insert(10)
-    li.insert(20)
-    li.insert(30)
-    li.insert(40)
-    li.insert(50)
-    li.insert(60)
-
-
-    li.printLinkedList()
+    li = [1 , 10, 5, 13, 2, 25]
     
-    print()
+    b = Bubblesort()
     
-    li.insertFront(0.2)
+    sortedLi = b.bubbleSort(li)
     
-    li.printLinkedList()
+    bs = BinarySearch()
+    
+    index = bs.binarySearch(sortedLi, 0, len(li) - 1, 10)
+    
+    if(index == -1):
+        print("Element not found")
+    else:
+        print(f"{sortedLi[index]} in {index} index")
+    
+    
+
+    
 
