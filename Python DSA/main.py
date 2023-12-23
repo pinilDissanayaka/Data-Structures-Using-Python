@@ -12,6 +12,11 @@ if __name__ == '__main__':
     
     dlist.print()
     
+    print()
+    
+    dlist.insertFirst(5)
+    
+    dlist.print()
     
     
 

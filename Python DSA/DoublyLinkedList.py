@@ -8,7 +8,7 @@ class DoublyLinkedList(object):
     def __init__(self) -> None:
         self._head = None
     
-    def insert(self, data):
+    def insert(self, data) -> None:
         newNode = Node(data)
         if(self._head == None):
             self._head = newNode
@@ -23,7 +23,7 @@ class DoublyLinkedList(object):
             newNode.prev = currNode
             newNode.next = None
             
-    def print(self):
+    def print(self) -> None:
         if(self._head == None):
             print("Doubly linked list is empty...")
             return
@@ -32,4 +32,18 @@ class DoublyLinkedList(object):
             while(currNode != None):
                 print(currNode.data, end= ' ')
                 currNode = currNode.next
+                
+    def insertFirst(self, data):
+        newNode = Node(data)
+        if(self._head == None):
+            self._head = newNode
+            newNode.next = None
+            newNode.prev = None
+        else:
+            newNode.next = self._head
+            self._head.prev = newNode
+            newNode.prev = None
+            self._head = newNode
+            
+        
         
