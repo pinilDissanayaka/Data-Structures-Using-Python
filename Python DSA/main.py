@@ -1,21 +1,17 @@
-from LinkedList import LinkedList
+from DoublyLinkedList import DoublyLinkedList
 from Algorithms import Bubblesort, BinarySearch
 
 if __name__ == '__main__':
-    li = [1 , 10, 5, 13, 2, 25]
+    dlist = DoublyLinkedList()
     
-    b = Bubblesort()
+    dlist.insert(10)
+    dlist.insert(20)
+    dlist.insert(30)
+    dlist.insert(40)
     
-    sortedLi = b.bubbleSort(li)
     
-    bs = BinarySearch()
+    dlist.print()
     
-    index = bs.binarySearch(sortedLi, 0, len(li) - 1, 10)
-    
-    if(index == -1):
-        print("Element not found")
-    else:
-        print(f"{sortedLi[index]} in {index} index")
     
     
 
