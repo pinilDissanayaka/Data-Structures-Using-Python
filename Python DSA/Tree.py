@@ -3,8 +3,7 @@ class TNode(object):
         self.data = data
         self.LChild = None
         self.RChild = None
-    
-    
+        
 class Tree(object):
     def __init__(self) -> None:
         self._root = None
@@ -17,9 +16,9 @@ class Tree(object):
             newNode.RChild = None
         else:
             if(node.data > data):
-                node.LChild = insert(self, node.LChild, data)
+                node.LChild = Tree.insert(self, node.LChild, data)
             elif(node.data < data):
-                node.RChild = insert(self, node.RChild, data)
+                node.RChild = Tree.insert(self, node.RChild, data)
         return node
     
     def search(self, node : TNode, key) -> TNode:
@@ -29,7 +28,7 @@ class Tree(object):
             if(node.data == key):
                 return node
             elif(node.data < key):
-                return search(self, node.RChild, key)
+                return Tree.search(self, node.RChild, key)
             else:
-                return search(self, node.LChild, key)
+                return Tree.search(self, node.LChild, key)
             
