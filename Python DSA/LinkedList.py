@@ -44,6 +44,31 @@ class LinkedList(object):
             
             currNode.next = newNode
             newNode.next = None
+            
+    def removeByPosition(self, position : int) -> None:
+        if(position < 0):
+            return
+        else:
+            if(self._head == None):
+                print("LinkedList is Empty.")
+                return
+            else:
+                currPosition = 0
+                currNode = self._head
+                if(position == 0):
+                    self._head = self._head.next
+                    currNode.data = None
+                    currNode.next = None
+                    return
+                else:
+                    while(currPosition < position):
+                        currPosition += 1
+                        currNode = currNode.next
+                    currNode.next = currNode.next.next
+                
+                
+                
+                
 
             
     
