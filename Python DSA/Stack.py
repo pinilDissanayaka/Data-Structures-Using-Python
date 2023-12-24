@@ -10,7 +10,7 @@ class Stack(object):
             return
         else:
             self._top += 1
-            self._arr[self._top] = data
+            self._arr.append(data)
     
     def pop(self, data):
         if(self._top == -1):
@@ -39,8 +39,17 @@ class Stack(object):
     
     def size(self):
         if(self._top == -1):
-            print("Stack is empty..")
             return 0
         else:
-            return (self._head - 1)
+            return (self._top + 1)
         
+        
+st = Stack(2)
+
+
+st.insert(10)
+
+print(st.size())
+
+
+
