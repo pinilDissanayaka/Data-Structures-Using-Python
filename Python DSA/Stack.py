@@ -48,6 +48,7 @@ st = Stack(2)
 
 
 st.insert(10)
+st.insert(20)
 
 print(st.size())
 

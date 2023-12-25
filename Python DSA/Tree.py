@@ -10,8 +10,8 @@ class Tree(object):
         
     def insert(self, node : TNode, data) -> TNode:
         newNode = TNode(data)
-        if(self._root == None):
-            self._root = newNode
+        if(node == None):
+            node = newNode
             newNode.LChild = None
             newNode.RChild = None
         else:
@@ -19,7 +19,8 @@ class Tree(object):
                 node.LChild = Tree.insert(self, node.LChild, data)
             elif(node.data < data):
                 node.RChild = Tree.insert(self, node.RChild, data)
-        return node
+        return newNode
+    
     
     def search(self, node : TNode, key) -> TNode:
         if(self._root == None):
