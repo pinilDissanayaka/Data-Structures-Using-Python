@@ -10,7 +10,11 @@ class Tree(object):
         
     def insert(self, node : TNode, data) -> TNode:
         newNode = TNode(data)
-        if(node == None):
+        if(self._root == None):
+            self._root = newNode
+            newNode.LChild = None
+            newNode.RChild = None
+        elif(node == None):
             node = newNode
             newNode.LChild = None
             newNode.RChild = None
