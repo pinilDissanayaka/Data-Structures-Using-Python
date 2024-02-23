@@ -10,22 +10,24 @@ class HashMap(object):
             index=hashedKey % self.max
         return index
     
-    def getItem(self, key):
+    def __getitem__(self, key):
         index=self.getHash(key=key)
         value=self.hash[index]
         return value
     
-    def setItem(self, key, value):
+    def __setitem__(self, key, value):
         index=self.getHash(key=key)
         self.hash[index]=value
         
+    def __delitem(self, key):
+        self.hash[key] = None
 
 
 
 hashmap= HashMap(10)
 
-hashmap.setItem('A', 102)
+hashmap['A']=102
 
-print(hashmap.getItem('b'))
+print(hashmap['b'])
         
         
