@@ -1,7 +1,7 @@
 class HashMap(object):
     def __init__(self, max) -> None:
         self.max=max
-        self.hash=[None for i in range(0, max)]
+        self.hash=[[] for i in range(0, max)]
     
     def getHash(self, key):
         for char in key:
@@ -12,22 +12,38 @@ class HashMap(object):
     
     def __getitem__(self, key):
         index=self.getHash(key=key)
-        value=self.hash[index]
+        for idx, element in enumerate(self.hash[index]):
+            if len(element)==2 and element[0]==key:
+                value=self.hash[index][idx][1]
         return value
     
     def __setitem__(self, key, value):
         index=self.getHash(key=key)
-        self.hash[index]=value
+        exist=False
+        for idx, element in enumerate(self.hash[index]):
+            if ((len(element)==2) and (element[0]==key)):
+                self.hash[index][idx]=(key, value)
+                exist=True
+                
+                
+        if not exist:
+            self.hash[index].append((key, value))
         
-    def __delitem(self, key):
-        self.hash[key] = None
+    def __delitem__(self, key):
+        index=self.getHash(key=key)
+        for idx, element in enumerate(self.hash[index]):
+            if len(element)==2 and element[0]==key:
+                self.hash[index][idx]=(None, None)
 
 
 
 hashmap= HashMap(10)
 
-hashmap['A']=102
+hashmap["march 6"] = 310
+hashmap["march 7"] = 420
+hashmap["march 8"] = 67
+hashmap["march 17"] = 6345706
 
-print(hashmap['b'])
+print(hashmap["march 8"])
         
         
