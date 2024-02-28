@@ -37,13 +37,18 @@ class HashMap(object):
 
 
 
-hashmap= HashMap(10)
 
-hashmap["march 6"] = 310
-hashmap["march 7"] = 420
-hashmap["march 8"] = 67
-hashmap["march 17"] = 6345706
+def main():
+    hashmap= HashMap(10)
 
-print(hashmap["march 8"])
+    hashmap["march 6"] = 310
+    hashmap["march 7"] = 420
+    hashmap["march 8"] = 67
+    hashmap["march 17"] = 6345706
+
+    print(hashmap["march 64"])
+    
+if __name__=='__main__':
+    main()
         
         
